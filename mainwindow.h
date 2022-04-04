@@ -10,6 +10,8 @@ QT_END_NAMESPACE
 //class FormPassword;
 #include "formpassword.hpp"
 
+class QActionGroup;
+
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -29,8 +31,17 @@ private slots:
 
     void on_pushButtonSendData_clicked();
 
+    void setSizePolicy(QAction *action);
+
+    void on_radioButtonList1_clicked(bool checked);
+
+    void on_radioButtonList2_clicked(bool checked);
+
+    void on_spinBoxStretch_valueChanged(int arg1);
+
 private:
     Ui::MainWindow *ui;
     FormPassword *fPass;
+    QActionGroup *sizePolicyActionGroup;
 };
 #endif // MAINWINDOW_H
